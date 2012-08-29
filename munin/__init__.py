@@ -12,6 +12,7 @@ class MuninPlugin(object):
     vlabel = None
     info = None
     category = None
+    period = "minute"
     fields = []
 
     def __init__(self):
@@ -26,7 +27,7 @@ class MuninPlugin(object):
 
     def config(self):
         conf = []
-        for k in ('title', 'category', 'args', 'vlabel', 'info', 'scale', 'order'):
+        for k in ('title', 'category', 'args', 'vlabel', 'info', 'scale', 'order', 'period'):
             v = getattr(self, k, None)
             if v is not None:
                 if isinstance(v, bool):
